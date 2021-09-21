@@ -4,3 +4,4 @@ secrets.*.js
 
 .DS_Store
 *.zip
+submit_data/
