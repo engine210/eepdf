@@ -56,10 +56,19 @@ Button.addEventListener('click', function(ce) {
 		var tab = tabs[0];
         console.log(tab.url, tab.title);
         chrome.tabs.getSelected(null, function(tab) {
-			chrome.tabs.sendMessage(tab.id, {text : 'get_img_urls'}, function(msg) {
-                save_imgs_to_pdf(msg);
-				document.getElementById("status").textContent = 'Done';
-            });
+			try{
+				if (typeof variable !== 'undefined') {
+					chrome.tabs.sendMessage(tab.id, {text : 'get_img_urls'}, function(msg) {
+						save_imgs_to_pdf(msg);
+						document.getElementById("status").textContent = 'Done';
+					});
+				} else {
+					document.getElementById("status").textContent = 'Download not availiable';
+				}
+			}catch(err){
+				document.getElementById("status").textContent = 'Download not availiable';
+			}
+			
         });
     });
 });

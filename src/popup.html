@@ -4,11 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <style>
+    body {
+      text-align: center;
+      color: rgb(70, 102, 183);
+    }
+    p {
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .button {
+      background-color: white;
+      border: 3px solid rgb(70, 102, 183);;
+      color: rgb(70, 102, 183);;
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      /* display: inline-block; */
+      font-size: 16px;
+      border-radius: 8px;
+    }
+    .button {
+      transition-duration: 0.4s;
+    }
+
+    .button:hover {
+      background-color: rgb(70, 102, 183);
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>eePDF</h1>
-  <button id=download-btn>Download</button>
+  <h2>eePDF</h2>
+  <button id=download-btn class="button">Download</button>
   <p id=status></p>
 </body>
 
